@@ -1,40 +1,40 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Super Smash Flash 2</title>
+    <meta charset='utf8'>
+    <title>Jeo</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+        }
 
+        #ruffle {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
 </head>
 <body>
+    <div id='ruffle'></div>
+    <script src='../ruffle/ruffle.js'></script>
+    <script>
+        var swfobject = {};
 
-    <div id="game-container">
+        swfobject.embedSWF = function(url, cont, width, height){
+            var ruffle = window.RufflePlayer.newest(),
+                player = Object.assign(document.getElementById(cont).appendChild(ruffle.createPlayer()), {
+                    width: width,
+                    height: height,
+                    style: 'width: 100%; height: 100%;',
+                });
 
-        <div id="flash-game"></div>
+            player.load({ url: url });
+        }
 
-    </div>
-
-<script>
-    window.RufflePlayer = window.RufflePlayer || {};
-
-    window.addEventListener("DOMContentLoaded", () => {
-        var ruffle = window.RufflePlayer.newest();
-        var player = ruffle.createPlayer();
-        player.style.width = '100%';
-        player.style.height = '100%';
-        var container = document.getElementById("flash-game");
-        container.appendChild(player);
-        player.load({
-            url: "https://files.twoplayergames.org/files/games/o3/super-smash-flash-2-v1.3/SSF2Beta_v1.3.1.2.swf",
-            base:"https://files.twoplayergames.org/files/games/o3/super-smash-flash-2-v1.3",
-            openUrlMode: 'deny',
-        });
-        player.splashScreen.style.background = 'rgba(0,0,0,.075)';
-        player.splashScreen.getElementsByClassName('logo')[0].style.display = 'none';
-    });
-</script>
-<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-
+        swfobject.embedSWF('super.swf', 'ruffle', 500, 500);
+    </script>
 </body>
 </html>
