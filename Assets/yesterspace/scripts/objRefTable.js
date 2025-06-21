@@ -36,6 +36,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.AddVar,
 		C3.Plugins.Sprite.Cnds.OnDestroyed,
 		C3.Plugins.System.Acts.GoToLayout,
+		C3.Plugins.Audio.Acts.FadeVolume,
 		C3.Plugins.System.Acts.SubVar,
 		C3.Plugins.System.Acts.ResetEventVar,
 		C3.Plugins.System.Cnds.Compare,
@@ -85,7 +86,8 @@ self.C3_JsPropNameTable = [
 	{fredspawner: 0},
 	{Audio: 0},
 	{controltxt: 0},
-	{Text3: 0},
+	{newchangestxt: 0},
+	{bullet2: 0},
 	{benspawnerRNG: 0},
 	{fredspawnerRNG: 0},
 	{fredmoveRNG: 0},
@@ -131,5 +133,6 @@ self.InstanceType = {
 	fredspawner: class extends self.ISpriteInstance {},
 	Audio: class extends self.IInstance {},
 	controltxt: class extends self.ITextInstance {},
-	Text3: class extends self.ITextInstance {}
+	newchangestxt: class extends self.ITextInstance {},
+	bullet2: class extends self.ISpriteInstance {}
 }
