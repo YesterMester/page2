@@ -1292,7 +1292,18 @@ self.C3_ExpressionFuncs = [
 			return () => f0(0, 1);
 		},
 		() => 15,
-		() => 0.15
+		() => 0.05,
+		() => 0.15,
+		() => "8bit1",
+		() => -176,
+		() => 108,
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => f0(1, 2);
+		},
+		() => 150,
+		() => "Health",
+		() => 10
 ];
 
 
