@@ -41,8 +41,7 @@ if (typeof window === 'undefined') {
 
                     const newHeaders = new Headers(response.headers);
                     newHeaders.set("Cross-Origin-Embedder-Policy",
-                        coepCredentialless ? "credentialless"
-                    );
+                        coepCredentialless ? "credentialless");
                     if (!coepCredentialless) {
                         newHeaders.set("Cross-Origin-Resource-Policy", "cross-origin");
                     }
